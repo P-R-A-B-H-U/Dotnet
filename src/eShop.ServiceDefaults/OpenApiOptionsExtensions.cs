@@ -16,7 +16,7 @@ internal static class OpenApiOptionsExtensions
 {
     public static OpenApiOptions ApplyApiVersionInfo(this OpenApiOptions options, string title, string description)
     {
-        options.UseTransformer((document, context, cancellationToken) =>
+        options.AddDocumentTransformer((document, context, cancellationToken) =>
         {
             var versionedDescriptionProvider = context.ApplicationServices.GetService<IApiVersionDescriptionProvider>();
             var apiDescription = versionedDescriptionProvider?.ApiVersionDescriptions
@@ -102,13 +102,13 @@ internal static class OpenApiOptionsExtensions
 
     public static OpenApiOptions ApplySecuritySchemeDefinitions(this OpenApiOptions options)
     {
-        options.UseTransformer<SecuritySchemeDefinitionsTransformer>();
+        options.AddDocumentTransformer<SecuritySchemeDefinitionsTransformer>();
         return options;
     }
 
     public static OpenApiOptions ApplyAuthorizationChecks(this OpenApiOptions options, string[] scopes)
     {
-        options.UseOperationTransformer((operation, context, cancellationToken) =>
+        options.AddOperationTransformer((operation, context, cancellationToken) =>
         {
             var metadata = context.Description.ActionDescriptor.EndpointMetadata;
 
@@ -140,7 +140,7 @@ internal static class OpenApiOptionsExtensions
 
     public static OpenApiOptions ApplyOperationDefaultValues(this OpenApiOptions options)
     {
-        options.UseOperationTransformer((operation, context, cancellationToken) =>
+        options.AddOperationTransformer((operation, context, cancellationToken) =>
         {
             var apiDescription = context.Description;
 
