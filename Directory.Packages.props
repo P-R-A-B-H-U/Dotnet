@@ -3,11 +3,11 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
     <AspnetVersion>9.0.0-rc.1.24401.1</AspnetVersion>
-    <AspireUnstablePackagesVersion>8.0.0-preview.8.24258.2</AspireUnstablePackagesVersion>
-    <MicrosoftExtensionsVersion>9.0.0-rc.1.24378.5</MicrosoftExtensionsVersion>
-    <EfVersion>9.0.0-preview.3.24172.4</EfVersion>
     <AspireVersion>8.1.0</AspireVersion>
-    <GrpcVersion>2.63.0</GrpcVersion>
+    <MicrosoftExtensionsVersion>9.0.0-rc.1.24378.5</MicrosoftExtensionsVersion>
+    <EfVersion>8.0.8</EfVersion>
+    <AspireUnstablePackagesVersion>8.0.0-preview.8.24258.2</AspireUnstablePackagesVersion>
+    <GrpcVersion>2.65.0</GrpcVersion>
     <DuendeVersion>7.0.6</DuendeVersion>
     <ApiVersioningVersion>8.1.0</ApiVersioningVersion>
   </PropertyGroup>
@@ -38,19 +38,12 @@
     <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="$(AspnetVersion)" />
     <PackageVersion Include="Microsoft.AspNetCore.TestHost" Version="$(AspnetVersion)" />
     <PackageVersion Include="Microsoft.Extensions.Identity.Stores" Version="$(AspnetVersion)" />
-<<<<<<< HEAD
-    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="$(MicrosoftExtensionsVersion)" />
+    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="9.0.0-preview.7.24402.1" />
     <PackageVersion Include="MSTest.TestAdapter" Version="3.5.2" />
     <PackageVersion Include="MSTest.TestFramework" Version="3.5.2" />
-    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0-preview.5.24257.1"/>
-=======
-    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="9.0.0-preview.7.24402.1" />
-    <PackageVersion Include="MSTest.TestAdapter" Version="3.4.3" />
-    <PackageVersion Include="MSTest.TestFramework" Version="3.4.3" />
     <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="$(AspnetVersion)"/>
->>>>>>> 83d7864 (Update dependencies)
     <!-- Version together with EF -->
-    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.0-preview.3" />
+    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="$(EfVersion)" />
     <PackageVersion Include="NSubstitute" Version="5.1.0" />
     <PackageVersion Include="NSubstitute.Analyzers.CSharp" Version="1.0.17" />
@@ -69,9 +62,9 @@
     <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.9.0" />
     <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.9.0" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.9.0" />
-    <PackageVersion Include="OpenTelemetry.Instrumentation.GrpcNetClient" Version="1.9.0-beta.1" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.GrpcNetClient" Version="1.6.0-beta.3" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.9.0" />
-    <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.8.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.9.0" />
     <!-- IdentityServer -->
     <PackageVersion Include="Duende.IdentityServer" Version="$(DuendeVersion)" />
     <PackageVersion Include="Duende.IdentityServer.AspNetIdentity" Version="$(DuendeVersion)" />
@@ -97,5 +90,6 @@
     <PackageVersion Include="xunit" Version="2.9.0" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="2.8.2" />
     <PackageVersion Include="Yarp.ReverseProxy" Version="2.1.0" />
+    <PackageVersion Include="IdentityModel" Version="7.0.0" />
   </ItemGroup>
 </Project>
